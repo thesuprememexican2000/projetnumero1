@@ -1,16 +1,20 @@
 import hash
 
-# Example usage:
-M = 10  # Size of the hash table
-H = [None] * M  # Initialize an empty hash table
+table = hash.HashTable(10)
 
 # Inserting elements into the hash table
-hash.insert(5, H, M)
-hash.insert(15, H, M)
-hash.insert(25, H, M)
+table.insertV2(5)
+table.insertV2(15)
+table.insertV2(25)
 
-result = hash.search(15, H, M)
-print(result)
+table.display_table()
 
-print(H)
+result = table.search(15)
+
+if result is not None:
+    print(f"Value {result} found in the hash table. Result: {result}")
+else:
+    print("Value not found in the hash table.")
+
+
 
