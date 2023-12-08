@@ -65,12 +65,11 @@ class HashTable():
         else:
             while self.__hash_table[i] is not None and self.__hash_table[i] != DELETED:
                 i = (i + 1) % self.__table_size
-                print(i)
-                self.__hash_table[i] = x
+            self.__hash_table[i] = x
 
     def searchV2(self, x):
         i = self.hash(x)
-        while self.__hash_table[i] is not None:
+        while self.__hash_table[i] is not None and self.__hash_table[i] != DELETED:
             if self.__hash_table[i] == x:
                 return self.__hash_table[i]
             i = (i + 1) % self.__table_size
